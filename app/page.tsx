@@ -2,6 +2,7 @@ import Image from "next/image";
 import FloatingNav from "./components/FloatingNav";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
 
 export default function Home() {
   return (
@@ -9,6 +10,8 @@ export default function Home() {
     <FloatingNav />
     <Hero />
     <About />
+    <Experience />
+    
    </main>
   );
 }
