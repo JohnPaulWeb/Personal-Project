@@ -1,7 +1,8 @@
 "use client"
 
 import { Code, Cpu, Database, GitBranch, Globe, Layers, Layout, Server, Terminal, Workflow } from "lucide-react";
-
+import AnimatedSection from "./AnimatedSection";
+import { motion } from "framer-motion";
 
 const SkillIcon = ({ icon: Icon, color }: {icon: any; color: string }) => (
     <div className={`p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg`}>
@@ -113,6 +114,38 @@ export default function Skills() {
 
                 <rect x="0" y="0" width="100%" height="1000%" fill="url (#skill-pattern)" />
             </svg>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+            <AnimatedSection title="Ayanokoji Kiyotaka" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {skills.map((skill, index) => (
+                    <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}>
+
+                        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300
+                         group ">
+                            <div className="flex items-center mb-4">
+                                <SkillIcon icon={skill.icon} color={skill.color} />
+                                <div className="ml-4">
+                                    <h3 className="text-lg font-semibold dark:text-white group-hover:text-blue-600 dark:group-hover-text-blue-400 transition-colors
+                                     duration-300">
+                                        {skill.name}
+                                    </h3>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400">{skill.tech}</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-700 dark:text-gray-300 text-sm">
+                                {skill.description}
+                            </p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
         </div>
 
 
