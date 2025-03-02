@@ -47,7 +47,7 @@ export default function Hero() {
                     transition={{ duration: 0.6 }}>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600
-                         dark:from-blue-400 dark:to-purple-400">Ayanokoji</h1>
+                         dark:from-blue-400 dark:to-purple-400">Ayanokoji Kiyotaka</h1>
 
                          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
                             Full Stack Web Dev
